@@ -1,0 +1,148 @@
+/**
+* Repository : https://github.com/dacodemaniak/my-little-company
+**/
+:root {
+    /**
+    *   Couleurs Bootstrap
+    **/
+    --primary:      #007bff;
+    --dark-primary: #03376e;
+    --secondary:    #6c757d;
+    --success:      #28a745;
+    --dark-success: #0a4a18;
+    --danger:       #dc3545;
+    --warning:      #ffc107;
+    --info:         #17a2b4;
+    --dark:         #343a40;
+    --light:        #ffffff;
+}
+
+/**
+* Repository : https://github.com/dacodemaniak/my-little-company
+**/
+
+:root {
+    /**
+    *   Couleurs Bootstrap
+    **/
+    --primary:      #007bff;
+    --dark-primary: #03376e;
+    --secondary:    #6c757d;
+    --success:      #28a745;
+    --dark-success: #0a4a18;
+    --danger:       #dc3545;
+    --warning:      #ffc107;
+    --info:         #17a2b4;
+    --dark:         #343a40;
+    --light:        #ffffff;
+}
+
+/**
+* Sélecteur : Balise fait référence aux balises du HTML
+**/
+body {
+    margin: .5em; /** Normaliser les marges de body **/
+    color: #999;
+}
+
+h1, p {
+    border: solid 1px green;
+}
+
+strong, em {
+    color: blue;
+}
+
+div.logo {
+    height: 200px;
+    width: 200px;
+}
+
+div.logo a img {
+    height: auto;
+    width: 100%;
+}
+/**
+* Sélecteur : ID commence par le signe #
+**/
+#page-container { /** Mobile first : conteneur occupe 100% de l'espace disponible **/
+    width: 100%;
+}
+
+@media screen and (min-width: 75em) { /** Ecran large (>= 1200px) **/
+    #page-container { /** Conteneur occupera 1100px de large et des marges droites et gauches automatiques **/
+        width: 1100px;
+        margin: 0 auto;
+    }
+}
+
+/**
+* Liens dans le pied de page :
+*   - Texte noir,
+*   - Pas de soulignement
+**/
+footer {
+    color: #000;
+}
+footer ul li a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/**
+* Sélecteur classes
+**/
+.btn {
+    
+    height: 1.5em;
+    width: 8em;
+    padding: .5em;
+    border-radius: 0.5em;
+    color: var(--light);
+    font-weight: bold;
+}
+
+
+a.btn {
+    display:block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1.5em;
+    vertical-align: middle;
+}
+.btn-primary {
+    background-color: var(--primary);
+    transition: background-color .5s 0s ease-out;
+}
+.btn-primary:hover {
+    background-color: var(--dark-primary);
+    /** background-color: darken(color, 15%) **/
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+}
+.btn-warning {
+    background-color: var(--warning);
+}
+
+figure figcaption {
+    position: absolute;
+    top: 98%;
+    border-top: 2px solid var(--dark);
+    background-color: rgba(128, 128, 128, .5);
+    height: inherit;
+    width: inherit;
+    transition: top .8s .2s ease-in-out;
+}
+
+figure:hover figcaption {
+    top:0;
+}
+
+figure {
+    height: 183px;
+    width: 275px;
+    overflow: hidden;
+    position: relative;
+}
