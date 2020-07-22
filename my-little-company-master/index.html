@@ -12,9 +12,11 @@
         <!-- Lier une feuille de style -->
         <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="assets/css/styles.css" rel="stylesheet">
+        <link rel="shortcut icon" href="assets/images/logo.png">
 
         <!--lien vers le code JavaScript-->
-        <script src=".node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="./src/app.js"></script>
     </head>
 
     <body><!-- Contenu visible du document -->
@@ -104,14 +106,14 @@
             <section>
                 <aside>
                     <!--Formulaire de contact -->
-                    <form method="post">
+                    <form method="post" id="contact-form">
                         <fieldset>
                          <div class="row">
                             <div class="col">
-                            <input type="text" class="form-control" placeholder="Votre nom">
+                            <input type="text" class="form-control" placeholder="Votre nom" name="lastname-ctrl">
                             </div>
                             <div class="col">
-                            <input type="email" class="form-control" placeholder="Votre email">
+                            <input type="email" class="form-control" placeholder="Votre email" name="email-ctrl">
                             </div>
                             <div class="col">
                             <input type="text" class="form-control" placeholder="Votre téléphone">
@@ -182,7 +184,7 @@
                                 </div> -->
                             </div>
                         </fieldset>
-                        <button type="submit" class="btn btn-primary mb-2"disabled>
+                        <button type="submit" class="btn btn-primary mb-2"disabled id="send-button">
                             Envoyer
                         </button>
                     </form>
