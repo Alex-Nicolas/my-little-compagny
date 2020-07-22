@@ -84,7 +84,6 @@ footer ul li a {
 **/
 .btn {
     
-    height: 1.5em;
     width: 8em;
     padding: .5em;
     border-radius: 0.5em;
@@ -98,7 +97,6 @@ a.btn {
     text-decoration: none;
     text-align: center;
     line-height: 1.5em;
-    vertical-align: middle;
 }
 .btn-primary {
     background-color: var(--primary);

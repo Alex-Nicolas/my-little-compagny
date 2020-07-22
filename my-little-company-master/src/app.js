@@ -37,5 +37,61 @@ $(document).ready( /** document=Document Object Model **/
                 }
             }
         )
+
+        //Blur event handler : fired when the focus is lost from a field
+        $('[required]').on(
+            'blur',
+            (event) => {
+                console.log('Focus was lost on a required field... But which ?')
+                const value = $(event.target).val()
+                if (value == '') {
+                    // How do I remove a class on the next div ?
+                    $(event.target).next('div').removeClass('hidden')
+                } else {
+                    // Well, how do I add a classon the next div ?
+                    $(event.target).next('div').addClass('hidden')
+                }
+
+            }
+        )
+        $('[required]').on(
+                    'focus',
+                    (event) => {
+                        let=nextDiv = null
+                        //if ($(event.target).attr('name') != 'email-ctrl') {
+                            nextDiv= $(event.target).next('div')
+                        //} else {
+                        //    nextDiv = $(event.target).parents('div.form-group').next('div')
+                        //}
+
+                    console.log('Well I got the focus')
+                    if (!nextDiv.hasClass('hidden')) { //Si récup focus, si la balise n'avait pas l'attribut 'hidden' alors on le rajoute
+                        nextDiv.addClass('hidden')
+                    }
+
+                    }
+                )
+        // Manage form submission
+        $('form#contact-form').on(
+            'submit',
+            (event) => {
+                console.log('Form was submit')
+                event.preventDefault() // Empêche le déclenchement de l'evènement par défaut
+
+                // Récupérer les données du template
+                const snackbar = $('#snackbar').contents().clone()
+
+                // Ajouter les éléments du snackbar au contenu visible courant
+                $('body').append(snackbar)
+
+                // Laisser vivant 3s et supprimer le clone
+                setTimeout( // Handler = fonction
+                    () => {
+                        snackbar.remove()
+                    },
+                    3000 // S'exprime en millisecondes
+                )
+            }
+        )
     }
 )
