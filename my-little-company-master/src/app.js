@@ -77,6 +77,7 @@ $(document).ready( /** document=Document Object Model **/
             (event) => {
                 console.log('Form was submit')
                 event.preventDefault() // Empêche le déclenchement de l'evènement par défaut
+                $('#send-button').attr('disabled' , 'disabled')
 
                 // Récupérer les données du template
                 const snackbar = $('#snackbar').contents().clone()
