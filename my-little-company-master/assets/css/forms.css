@@ -12,3 +12,19 @@ form div.bad-control {
     font-size: .8em;
     letter-spacing: .2em;
 }
+
+.name-form{
+    margin-top: 10px;
+}
+
+.email-form{
+    margin-top: 10px;
+}
+
+.phone-form{
+    margin-top: 10px;
+}
+
+.outer-modal.hidden{
+    display: none;
+}

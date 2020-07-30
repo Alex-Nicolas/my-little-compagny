@@ -48,7 +48,7 @@ $(document).ready( /** document=Document Object Model **/
                     // How do I remove a class on the next div ?
                     $(event.target).next('div').removeClass('hidden')
                 } else {
-                    // Well, how do I add a classon the next div ?
+                    // Well, how do I add a class on the next div ?
                     $(event.target).next('div').addClass('hidden')
                 }
 
@@ -76,6 +76,8 @@ $(document).ready( /** document=Document Object Model **/
             'submit',
             (event) => {
                 console.log('Form was submit')
+                $('.outer-modal').addClass('hidden')
+                
                 event.preventDefault() // Empêche le déclenchement de l'evènement par défaut
                 $('#send-button').attr('disabled' , 'disabled')
 
@@ -92,6 +94,23 @@ $(document).ready( /** document=Document Object Model **/
                     },
                     3000 // S'exprime en millisecondes
                 )
+            remove(value)
+            }
+        )
+
+        $('.btn-close').on(
+            'click',
+            (event) => {
+                console.log("Close")
+                $('.outer-modal').addClass('hidden')
+            }
+        )
+
+        $('.form-appear').on(
+            'click',
+            (event) => {
+                console.log('Open')
+                $('.outer-modal').removeClass('hidden')
             }
         )
     }

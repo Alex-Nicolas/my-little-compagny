@@ -101,6 +101,8 @@ a.btn {
 .btn-primary {
     background-color: var(--primary);
     transition: background-color .5s 0s ease-out;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 .btn-primary:hover {
     background-color: var(--dark-primary);
@@ -133,4 +135,38 @@ figure {
     width: 275px;
     overflow: hidden;
     position: relative;
+}
+
+.object{
+    margin-left: -5px;
+}
+
+.who-are-you{
+    margin-left: 1%;
+}
+
+.interest{
+    margin-left: 1%px;
+}
+
+.how{
+    margin-left: 1%px;
+}
+
+.footer{
+    margin-top: 5em;
+}
+
+.form-appear{
+    width: 8em;
+    padding: .5em;
+    border-radius: 0.5em;
+    background-color: var(--info);
+    color: var(--light);
+    font-weight: bold;
+    display:block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1.5em;
+    margin-top: 3em;
 }

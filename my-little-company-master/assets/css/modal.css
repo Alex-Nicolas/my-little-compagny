@@ -1,0 +1,64 @@
+/** 
+* modal.css
+* @version 1.0.0
+*   Some styles to handle modal boxes
+**/
+
+/**
+* outer-modal :
+*   - position : fixed
+*   - height, width : 100%
+*   - top, left : 0
+*   - background with transparency
+**/
+
+.outer-modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(128, 128, 128, .5);
+}
+
+.inner-modal{
+    border: solid 1px black;
+    border-radius: 20px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 75%;
+    width: 50%;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.close-bar{
+    position: absolute;
+    border-bottom: solid 1px black;
+    height: 5%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.btn-close{
+    position: relative;
+    left: 95%;
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 2em;
+    color: white;
+    line-height: 1em;
+}
+
+.modal-form{
+    position: relative;
+    overflow-Y: auto;
+    overflow-X: hidden;
+    height: 90%;
+    width: 90%;
+    margin: auto;
+    transform: translateY(5%);
+}

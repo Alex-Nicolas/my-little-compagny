@@ -15,6 +15,7 @@
         <link href="./assets/css/forms.css" rel="stylesheet">
         <link href="./assets/css/snackbar.css" rel="stylesheet">
         <link rel="shortcut icon" href="assets/images/logo.png">
+        <link href="./assets/css/modal.css" rel="stylesheet">
 
         <!--lien vers le code JavaScript-->
         <script src="./node_modules/jquery/dist/jquery.min.js"></script>
@@ -106,102 +107,105 @@
 
                 </section>
             <section>
-                <aside>
-                    <!--Formulaire de contact -->
-                    <form method="get" id="contact-form">
-                        <fieldset>
-                         <div class="row">
-                            <div class="col">
-                            <input type="text" class="form-control" placeholder="Votre nom" name="lastname-ctrl" required>
-                                <div class="bad-control hidden">
-                                    Votre nom est obligatoire !
-                                </div>
+                <aside>        
+                    <!-- Modal box template -->
+                    <div class="outer-modal hidden">
+                        <div class="inner-modal">
+                            <div class="close-bar">
+                                <span class ="btn-close" aria-hidden="true">&times;</span>
                             </div>
-                            <div class="col">
-                            <input type="email" class="form-control" placeholder="Votre email" name="email-ctrl" required>
-                               <div class="bad-control hidden">
-                                    Votre email est obligatoire !
-                                </div>
-                            </div>
-                            <div class="col">
-                            <input type="text" class="form-control" placeholder="Votre téléphone">
+                            <div class="modal-form">
+                            <!-- Formulaire de contact -->
+                                <form method="get" id="contact-form">
+                                    <fieldset>
+                                        <div class="form-group">
+                                            <div class="col">
+                                            <input type="text" class="form-control name-form" placeholder="Votre nom" name="lastname-ctrl" required>
+                                                <div class="bad-control hidden">
+                                                    Votre nom est obligatoire !
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                            <input type="email" class="form-control email-form" placeholder="Votre email" name="email-ctrl" required>
+                                            <div class="bad-control hidden">
+                                                    Votre email est obligatoire !
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                            <input type="text" class="form-control phone-form" placeholder="Votre téléphone">
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <label for="object-ctrl">
+                                                Objet de votre demande : 
+                                            </label>
+                                            <textarea class="form-control object col-8" name="object-ctrl" id="object-ctrl"></textarea>
+                                        </div>
+                                        <legend>Un peu plus sur vous...</legend>
+                                        <div class="how">
+                                            <label for="lead-ctrl">
+                                                Comment vous connaissez-nous ?
+                                            </label>
+                                            <div class="form-row align-items-center">
+                                                <div class="col-auto my-1">
+                                                <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+                                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                                    <option selected>Sélectionnez...</option>
+                                                    <option value="1">Moteur de recherche</option>
+                                                    <option value="2">Réseaux sociaux</option>
+                                                    <option value="3">Autre...</option>
+                                                </select>
+                                            </div>
+                                            <label for="subscribe-ctrl">
+                                                <input type="checkbox" name="subscribe-ctrl" id="subscribe-ctrl">
+                                                Souscrire à la newsletter
+                                            </label>
+                                        </div>
+                                        <div class="who-are-you">
+                                            <label>
+                                                Vous êtes...
+                                            </label>
+                                            <label for="professional">
+                                                <input type="radio" name="whoareyou" value="0" id="professional">Professionnel
+                                            </label>
+                                            <label for="individual">
+                                                <input type="radio" name="whoareyou" value="1" id="individual">Particulier
+                                            </label>
+                                            <label for="both">
+                                                <input type="radio" name="whoareyou" value="2" id="both">Les deux
+                                            </label>
+                                        </div>
+
+                                        <div class="interest col-auto my-1">
+                                            <label for="subjects-ctrl">
+                                                Vous êtes intéressé par...
+                                            </label>
+                                                <select class="custom-select" multiple size="6">
+                                                    <option value="1">Tout !</option>
+                                                    <option value="2">Rien</option>
+                                                    <option value="3">Autre chose</option>
+                                                    <option value="4">La météo du week-end</option>
+                                                    <option value="5">Les vacances</option>
+                                                    <option value="6">L'apéro de vendredi</option>
+                                                </select>
+                                        </div>
+                                    </fieldset>
+                                    <button type="submit" class="btn btn-primary mb-2"disabled id="send-button">
+                                        Envoyer
+                                    </button>
+                                </form>
+                            <!-- Fin du formulaire -->
                             </div>
                         </div>
-                        <div class="col-auto">
-                            <label for="object-ctrl">
-                                Objet de votre demande : 
-                            </label>
-                            <textarea class="form-control col-8" name="object-ctrl" id="object-ctrl"></textarea>
-                                <legend>Un peu plus sur vous...</legend>
-                                <label for="lead-ctrl">
-                                    Comment vous connaissez-nous ?
-                                </label>
-                                <div class="form-row align-items-center">
-                                    <div class="col-auto my-1">
-                                    <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-                                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                                        <option selected>Sélectionnez...</option>
-                                        <option value="1">Moteur de recherche</option>
-                                        <option value="2">Réseaux sociaux</option>
-                                        <option value="3">Autre...</option>
-                                    </select>
-                                </div>
-                                <label for="subscribe-ctrl">
-                                    <input type="checkbox" name="subscribe-ctrl" id="subscribe-ctrl">
-                                    Souscrire à la newsletter
-                                </label>
-                            </div>
-                            <div>
-                                <label>
-                                    Vous êtes...
-                                </label>
-                                <label for="professional">
-                                    <input type="radio" name="whoareyou" value="0" id="professional">Professionnel
-                                </label>
-                                <label for="individual">
-                                    <input type="radio" name="whoareyou" value="1" id="individual">Particulier
-                                </label>
-                                <label for="both">
-                                    <input type="radio" name="whoareyou" value="2" id="both">Les deux
-                                </label>
-                            </div>
-                            <div class="col-auto my-1">
-                                <label for="subjects-ctrl">
-                                    Vous êtes intéressé par...
-                                </label>
-                                    <select class="custom-select" multiple size="6">
-                                        <option value="1">Tout !</option>
-                                        <option value="2">Rien</option>
-                                        <option value="3">Autre chose</option>
-                                        <option value="4">La météo du week-end</option>
-                                        <option value="5">Les vacances</option>
-                                        <option value="6">L'apéro de vendredi</option>
-                                    </select>
-                             <!-- <div class="form-row align-items-center">
-                                    <div class="col-auto my-1">
-                                    <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
-                                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                                        <option selected>Choisissez...</option>
-                                        <option value="1">Tout !</option>
-                                        <option value="2">Rien</option>
-                                        <option value="3">Autre chose</option>
-                                        <option value="4">La météo du week-end</option>
-                                        <option value="5">Les vacances</option>
-                                        <option value="6">L'apéro de vendredi</option>
-                                    </select>
-                                </div> -->
-                            </div>
-                        </fieldset>
-                        <button type="submit" class="btn btn-primary mb-2"disabled id="send-button">
-                            Envoyer
-                        </button>
-                    </form>
-                    <!--Fin de formulaire -->
+                    </div>
                 </aside>
+                <div class="form-appear">
+                    Viendez !
+                </div>
             </section>
             </main>
 
-            <footer>
+            <footer class="footer">
                 <!-- 
                     Mentions Légales : obligatoire
                     Copyright (c)
@@ -230,6 +234,7 @@
             </footer>
 
         </div>
+
         <!-- Templates : snackbar and other -->
         <template id="snackbar">
             <div class="snackbar">
